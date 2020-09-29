@@ -49,7 +49,7 @@ class Song
     artist = file.name
   end
 
-  def create_by_filename(file)
+  def create_from_filename(file)
 
   end
 
