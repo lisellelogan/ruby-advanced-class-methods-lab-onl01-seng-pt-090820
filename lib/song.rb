@@ -51,10 +51,11 @@ class Song
     song.name = song_title
     song.artist_name = artist
     song
+  binding.pry
   end
 
   def self.create_from_filename(file)
-    
+
   end
 
   def self.destroy_all
