@@ -48,6 +48,7 @@ class Song
     song_title = file[1] + ".mp3"
 
     song = self.create
+    song.name = song_title
   end
 
   def create_from_filename(file)
