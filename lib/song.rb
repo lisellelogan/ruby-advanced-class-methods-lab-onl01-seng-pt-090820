@@ -49,7 +49,7 @@ class Song
 
     song = self.create
     song.name = song_title
-    song.artist = artist
+    song.artist_name = artist
     song
   end
 
