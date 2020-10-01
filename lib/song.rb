@@ -41,7 +41,8 @@ class Song
     if name == self.find_by_name(name)
       self.name
     else
-      #do something
+      self.create_by_name(name)
+      self.name
     end
   end
 
