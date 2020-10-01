@@ -42,7 +42,7 @@ class Song
     @@all.sort_by{|word| word.name}
   end
 
-  def new_from_filename(file)
+  def new_from_filename(file_name)
     file = self.new
     artist = file.name
   end
