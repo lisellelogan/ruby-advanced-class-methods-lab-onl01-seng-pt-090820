@@ -35,14 +35,7 @@ class Song
   end
 
   def self.find_or_create_by_name(name)
-    #  self.create_by_name(name) unless self.find_by_name(name)
-    #  self.name
-    if self.find_by_name(name)
-      name
-    else
-      self.create_by_name(name)
-    end
-  end
+    self.find_by_name(name) || self.create_by_name(name)
 
   def self.alphabetical
     @@all.sort_by{|word| word.name}
