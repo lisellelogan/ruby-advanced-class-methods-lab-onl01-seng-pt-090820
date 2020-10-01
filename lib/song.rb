@@ -25,8 +25,7 @@ class Song
   end
 
   def self.create_by_name(name)
-    adding_a_song = self.new
-    adding_a_song.save
+    adding_a_song = self.create
     adding_a_song.name = name
     adding_a_song
   end
@@ -36,26 +35,30 @@ class Song
   end
 
   def self.find_or_create_by_name(name)
-     self.create_by_name(name) unless self.find_by_name(name)
-     self.name
+    self.find_by_name(name) || self.create_by_name(name)
   end
 
   def self.alphabetical
     @@all.sort_by{|word| word.name}
   end
 
-  def new_from_filename(file)
-    file = self.new
-    artist = file.name
+  def self.new_from_filename(file_name)
+    file = file_name.split(" - ")
+    artist = file[0]
+    song_title = file[1].gsub(".mp3","")
+
+    song = self.create
+    song.name = song_title
+    song.artist_name = artist
+    song
   end
 
-  def create_from_filename(file)
-
+  def self.create_from_filename(file)
+    self.new_from_filename(file)
   end
 
   def self.destroy_all
     self.all.clear
   end
-
 
 end
